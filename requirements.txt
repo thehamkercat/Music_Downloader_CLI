@@ -6,3 +6,4 @@ flask-cors
 colorama
 youtube_search
 youtube_dl
+wget

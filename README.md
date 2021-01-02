@@ -1,5 +1,6 @@
 ## Music Downloader CLI
 
+![.](https://forthebadge.com/images/badges/made-with-python.svg)    ![.](https://forthebadge.com/images/badges/built-with-love.svg)
 ![Preview](https://i.imgur.com/BCM42PP.png)
 
 

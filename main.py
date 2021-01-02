@@ -2,7 +2,6 @@ import requests
 import wget
 import os
 from colorama import Fore
-import jiosaavn_app
 
 try:
     while True:

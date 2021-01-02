@@ -3,3 +3,4 @@ gunicorn
 requests
 pyDes
 flask-cors
+colorama

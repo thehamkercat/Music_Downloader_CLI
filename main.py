@@ -26,9 +26,11 @@ try:
 
                 n = 0
                 ii = 0
+                count = len(r.json())
+
                 print(Fore.LIGHTGREEN_EX + "Found These Songs:\n")
 
-                for i in range(5):
+                for i in range(count):
                     song_name = f"{r.json()[i]['song']}-{r.json()[i]['singers']}-{r.json()[i]['year']}"
                     print(f"{Fore.LIGHTGREEN_EX} {n}. {song_name}")
                     n += 1

@@ -1,13 +1,13 @@
-#### Music Downloader CLI
+## Music Downloader CLI
 
-## Credits
+#### Credits
 
 1. `https://github.com/cyberboysumanjay/JioSaavnAPI` [For JioSaavnAPI]
 
-## Instructions
+#### Instructions
 
 1.  `git clone https://github.com/thehamkercat/Music_Downloader_CLI`
 2. `cd Music_Downloader_CLI`
 3. `pip3 install -r requirements.txt`
-4. `python3 jiosaavn_app.py` #This step is needed for now because this project is still WIP
+4. `python3 jiosaavn_app.py` This step is needed for now because this project is still WIP
 5. `python3 main.py`

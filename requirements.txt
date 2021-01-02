@@ -1,0 +1,12 @@
+Flask
+gunicorn
+requests
+pyDes
+flask-cors
+httplib2
+beautifulsoup4
+clint
+pycryptodome
+requests-toolbelt
+bs4
+lxml

@@ -4,3 +4,5 @@ requests
 pyDes
 flask-cors
 colorama
+youtube_search
+youtube_dl

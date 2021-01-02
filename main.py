@@ -1,25 +1,28 @@
+from __future__ import unicode_literals
 import requests
 import wget
 import os
+from youtube_search import YoutubeSearch
+import youtube_dl
 from colorama import Fore
+from config import jiosaavn_api as jsapi
 
 
 try:
     while True:
         try:
-            service = int(input(Fore.YELLOW + ''' \nWhich Service Do You Want To Use? , Enter 0 To Exit\n\n 1. JioSaavn\n\n > '''))
+            service = int(input(Fore.YELLOW + ''' \nWhich Service Do You Want To Use? , Enter 0 To Exit\n\n 1. JioSaavn\n 2. Youtube\n\n > '''))
         except ValueError:
             print(Fore.LIGHTGREEN_EX + '\n Exited!\n')
             exit()
 
         try:
             if service == 1:
-                from config import jiosaavn_api as jsapi
-                song_name = input(Fore.YELLOW + " \nEnter The Name Of Song You Want To Download.\n\n> ")
+                query = input(Fore.YELLOW + " \nEnter The Name Of Song You Want To Download.\n\n> ")
                 print(Fore.YELLOW + "\nSearching....\n")
 
                 try:
-                    r = requests.get(f"{jsapi}{song_name}")
+                    r = requests.get(f"{jsapi}{query}")
                 except:
                     print(Fore.RED + "You're Having Some Network Issues, Try To Ping The Server.\n")
                     exit()
@@ -35,7 +38,7 @@ try:
                     print(f"{Fore.LIGHTGREEN_EX} {n}. {song_name}")
                     n += 1
 
-                song_index = int(input(Fore.YELLOW + " \nEnter Song's Index To Download It.\n\n > "))
+                song_index = int(input(Fore.YELLOW + " \nEnter Song Number To Download It.\n\n > "))
                 s = song_index
                 song_name = f"{r.json()[s]['song']}-{r.json()[s]['singers']}-{r.json()[s]['year']}"
                 song_link = r.json()[song_index]['media_url']
@@ -46,11 +49,36 @@ try:
                 os.rename(download, final_song_name)
 
                 print(Fore.LIGHTGREEN_EX + " \n\nDownloaded In Current Directory")
+            
+            elif service == 2:
+                query = input(Fore.YELLOW + " \nEnter The Name Of Song You Want To Download.\n\n> ")
+                print(Fore.YELLOW + "\nSearching....\n")
+                
+                results = YoutubeSearch(query, max_results=5).to_dict()
 
-            elif service == 0:
-                print(Fore.LIGHTGREEN_EX + "\nExited!\n")
-                exit()
-
+                for i in range(len(results)):
+                    print(f"{i}. {results[i]['title']}")
+ 
+                song_index = int(input(Fore.YELLOW + " \nEnter Song Number.\n\n > "))
+                query2 = int(input(Fore.YELLOW + " \nWhat Do You Want To Do?\n 1. Download\n 2. Listen\n\n> "))
+                yt_link = f"https://youtube.com{results[song_index]['url_suffix']}"
+                if query2 == 1:
+                    ydl_opts = {
+                        'format': 'bestaudio/best',
+                        'postprocessors': [{
+                            'key': 'FFmpegExtractAudio',
+                            'preferredcodec': 'mp3',
+                            'preferredquality': '192',
+                        }],
+                    }
+                    
+                    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+                        ydl.download([yt_link])
+                if query2 == 2:
+                    print(Fore.YELLOW + "\nLoading...\n")
+                    os.system(f"mpv {yt_link} --no-video")
+                    print("ok")
+                    
         except ValueError:
             print(Fore.RED + '\n Wrong Input! Try Again.\n')
 

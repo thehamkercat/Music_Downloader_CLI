@@ -4,6 +4,9 @@ __pycache__/
 *$py.class
 .
 *.m4a
+*.mp3
+*.webm
+*.mp4
 # C extensions
 *.so
 config.py

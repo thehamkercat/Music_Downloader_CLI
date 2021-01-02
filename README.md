@@ -9,7 +9,7 @@
 2. `cd Music_Downloader_CLI`
 3. `cp sample_config.py config.py`
 4. `pip3 install -r requirements.txt`
-5. `python3 jiosaavn_app.py` Only do this if you want jiosaavn support.
+5. `python3 app.py` Only do this if you want jiosaavn support.
 6. `python3 main.py`
 
 

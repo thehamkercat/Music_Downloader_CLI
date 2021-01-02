@@ -1,5 +1,9 @@
 ## Music Downloader CLI
 
+![Preview](https://i.imgur.com/nVmmfDK.png)
+
+
+
 #### Credits
 
 1. `https://github.com/cyberboysumanjay/JioSaavnAPI` [For JioSaavnAPI]

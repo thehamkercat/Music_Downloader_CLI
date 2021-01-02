@@ -5,12 +5,13 @@
 
 #### Instructions
 
-1.  `git clone https://github.com/thehamkercat/Music_Downloader_CLI`
+1. `git clone https://github.com/thehamkercat/Music_Downloader_CLI`
 2. `cd Music_Downloader_CLI`
 3. `cp sample_config.py config.py`
 4. `pip3 install -r requirements.txt`
-5. `python3 app.py` Only do this if you want jiosaavn support.
-6. `python3 main.py`
+5. Install `ffmpeg` and `mpv` via your package manager
+6. `python3 app.py` Only do this if you want jiosaavn support.
+7. `python3 main.py`
 
 
 #### Note

@@ -3,6 +3,7 @@ import wget
 import os
 from colorama import Fore
 
+
 try:
     while True:
         try:
@@ -22,7 +23,7 @@ try:
                 except:
                     print(Fore.RED + "You're Having Some Network Issues, Try To Ping The Server.\n")
                     exit()
- 
+
                 n = 0
                 ii = 0
                 print(Fore.LIGHTGREEN_EX + "Found These Songs:\n")
@@ -41,9 +42,9 @@ try:
                 download = wget.download(song_link)
                 final_song_name = f"{song_name}.m4a"
                 os.rename(download, final_song_name)
-                
+
                 print(Fore.LIGHTGREEN_EX + " \n\nDownloaded In Current Directory")
-            
+
             elif service == 0:
                 print(Fore.LIGHTGREEN_EX + "\nExited!\n")
                 exit()

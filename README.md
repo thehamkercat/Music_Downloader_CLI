@@ -3,10 +3,11 @@
 ![Preview](https://i.imgur.com/nVmmfDK.png)
 
 
-
 #### Credits
 
 1. `https://github.com/cyberboysumanjay/JioSaavnAPI` [For JioSaavnAPI]
+2. `https://github.com/cyberboysumanjay/GaanaAPI` [For GaanaAPI]
+
 
 #### Instructions
 
@@ -19,5 +20,5 @@
 
 
 #### Note
-1. Currently this project only supports JioSaavn
+1. Currently this project only supports JioSaavn And Gaana
 2. More services will be added soon

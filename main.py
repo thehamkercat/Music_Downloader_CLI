@@ -11,7 +11,7 @@ from config import jiosaavn_api as jsapi
 try:
     while True:
         try:
-            service = int(input(Fore.YELLOW + ''' \nWhich Service Do You Want To Use? , Enter 0 To Exit\n\n 1. JioSaavn\n 2. Youtube\n\n > '''))
+            service = int(input(Fore.YELLOW + ''' \nWhich Service Do You Want To Use? , Enter 0 To Exit\n\n 1. JioSaavn\n 2. Youtube Audio\n 3. Youtube Video\n\n > '''))
         except ValueError:
             print(Fore.LIGHTGREEN_EX + '\n Exited!\n')
             exit()
@@ -48,10 +48,11 @@ try:
                 final_song_name = f"{song_name}.m4a"
                 os.rename(download, final_song_name)
 
-                print(Fore.LIGHTGREEN_EX + " \n\nDownloaded In Current Directory")
+                print(Fore.LIGHTGREEN_EX + " \n\nDownloaded In Current Directory\n")
             
+
             elif service == 2:
-                query = input(Fore.YELLOW + " \nEnter The Name Of Song You Want To Download.\n\n> ")
+                query = input(Fore.YELLOW + " \nEnter The Name Of Song You Want To Download\Listen.\n\n> ")
                 print(Fore.YELLOW + "\nSearching....\n")
                 
                 results = YoutubeSearch(query, max_results=5).to_dict()
@@ -74,11 +75,33 @@ try:
                     
                     with youtube_dl.YoutubeDL(ydl_opts) as ydl:
                         ydl.download([yt_link])
+                print(Fore.LIGHTGREEN_EX + " \n\nDownloaded In Current Directory\n")
                 if query2 == 2:
                     print(Fore.YELLOW + "\nLoading...\n")
                     os.system(f"mpv {yt_link} --no-video")
-                    print("ok")
-                    
+
+                
+            elif service == 3:
+                query = input(Fore.YELLOW + " \nEnter The Name Of Video You Want To Download/Stream.\n\n> ")
+                print(Fore.YELLOW + "\nSearching....\n")
+                
+                results = YoutubeSearch(query, max_results=5).to_dict()
+
+                for i in range(len(results)):
+                    print(f"{i}. {results[i]['title']}")
+ 
+                song_index = int(input(Fore.YELLOW + " \nEnter Video Number.\n\n > "))
+                query2 = int(input(Fore.YELLOW + " \nWhat Do You Want To Do?\n 1. Download\n 2. Stream\n\n> "))
+                yt_link = f"https://youtube.com{results[song_index]['url_suffix']}"
+                if query2 == 1:
+                    ydl_opts = {}
+                    with youtube_dl.YoutubeDL(ydl_opts) as ydl:
+                        ydl.download([yt_link])
+                    print(Fore.LIGHTGREEN_EX + " \n\nDownloaded In Current Directory\n")
+                if query2 == 2:
+                    print(Fore.YELLOW + "\nLoading...\n")
+                    os.system(f"mpv {yt_link}")
+
         except ValueError:
             print(Fore.RED + '\n Wrong Input! Try Again.\n')
 

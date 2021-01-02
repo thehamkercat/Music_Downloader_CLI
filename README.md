@@ -1,6 +1,6 @@
 ## Music Downloader CLI
 
-![Preview](https://i.imgur.com/nVmmfDK.png)
+![Preview](https://i.imgur.com/BCM42PP.png)
 
 
 #### Instructions
@@ -14,8 +14,8 @@
 
 
 #### Note
-1. Currently this project only supports JioSaavn
-2. More services will be added soon
+1. Currently this project only supports JioSaavn and Youtube.
+2. More services will be added soon.
 
 
 #### Credits

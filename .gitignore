@@ -3,6 +3,7 @@ __pycache__/
 *.py[cod]
 *$py.class
 .
+*.m4a
 # C extensions
 *.so
 config.py

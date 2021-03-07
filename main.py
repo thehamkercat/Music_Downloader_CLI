@@ -5,7 +5,6 @@ import os
 from youtube_search import YoutubeSearch
 import youtube_dl
 from colorama import Fore
-from config import jiosaavn_api as jsapi
 
 
 try:
@@ -22,7 +21,7 @@ try:
                 print(Fore.YELLOW + "\nSearching....\n")
 
                 try:
-                    r = requests.get(f"{jsapi}{query}")
+                    r = requests.get(f"https://jiosaavnapi.bhadoo.uk/result/?query={query}")
                 except:
                     print(Fore.RED + "You're Having Some Network Issues, Try To Ping The Server.\n")
                     exit()

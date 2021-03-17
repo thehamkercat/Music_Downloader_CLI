@@ -1,6 +1,4 @@
-requests
-pyDes
+python-arq
 colorama
-youtube_search
 youtube_dl
-wget
+import wget

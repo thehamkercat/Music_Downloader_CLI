@@ -1,4 +1,4 @@
 python-arq
 colorama
 youtube_dl
-import wget
+wget

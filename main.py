@@ -1,22 +1,24 @@
-from __future__ import unicode_literals
-import os
-import youtube_dl
-import wget
-import asyncio
-from colorama import Fore
 from Python_ARQ import ARQ
+from colorama import Fore
+import asyncio
+import wget
+import youtube_dl
+import os
+fro __future__ import unicode_literals
 
 arq = ARQ("https://thearq.tech")
+
 
 async def main():
     try:
         while True:
             try:
-                service = int(input(Fore.YELLOW + ''' \nWhich Service Do You Want To Use? , Enter 0 To Exit\n\n 1. JioSaavn\n 2. Youtube Audio\n 3. Youtube Video\n\n > '''))
+                service = int(input(
+                    Fore.YELLOW + ''' \nWhich Service Do You Want To Use? , Enter 0 To Exit\n\n 1. JioSaavn\n 2. Youtube Audio\n 3. Youtube Video\n\n > '''))
             except ValueError:
                 print(Fore.LIGHTGREEN_EX + '\n Exited!\n')
                 exit()
-
+ bbf fb
             try:
                 if service == 1:
                     query = input(Fore.YELLOW + " \nEnter The Name Of Song You Want To Download.\n\n> ")

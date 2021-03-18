@@ -20,6 +20,9 @@ async def main():
                 exit()
 
             try:
+                if service == 0:
+                    exit()
+
                 if service == 1:
                     query = input(Fore.YELLOW + " \nEnter The Name Of Song You Want To Download.\n\n> ")
                     print(Fore.YELLOW + "\nSearching....\n")

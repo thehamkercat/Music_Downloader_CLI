@@ -1,10 +1,10 @@
+from __future__ import unicode_literals
 from Python_ARQ import ARQ
 from colorama import Fore
 import asyncio
 import wget
 import youtube_dl
 import os
-fro __future__ import unicode_literals
 
 arq = ARQ("https://thearq.tech")
 
@@ -18,7 +18,7 @@ async def main():
             except ValueError:
                 print(Fore.LIGHTGREEN_EX + '\n Exited!\n')
                 exit()
- bbf fb
+
             try:
                 if service == 1:
                     query = input(Fore.YELLOW + " \nEnter The Name Of Song You Want To Download.\n\n> ")

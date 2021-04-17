@@ -6,7 +6,7 @@ import wget
 import youtube_dl
 import os
 
-arq = ARQ("http://35.240.133.234:8000")
+arq = ARQ("https://thearq.tech")
 
 
 async def main():

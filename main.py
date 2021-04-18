@@ -61,7 +61,7 @@ async def main():
                     query = input(Fore.YELLOW + " \nEnter The Name Of Song You Want To Download\Listen.\n\n> ")
                     print(Fore.YELLOW + "\nSearching....\n")
                     
-                    results = await arq.youtube(query, 5) 
+                    results = await arq.youtube(query) 
 
                     for i in range(len(results)):
                         print(f"{i}. {results[i].title}")
@@ -91,7 +91,7 @@ async def main():
                     query = input(Fore.YELLOW + " \nEnter The Name Of Video You Want To Download/Stream.\n\n> ")
                     print(Fore.YELLOW + "\nSearching....\n")
                     
-                    results = await arq.youtube(query, 5)
+                    results = await arq.youtube(query)
 
                     for i in range(len(results)):
                         print(f"{i}. {results[i].title}")

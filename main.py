@@ -5,12 +5,13 @@ import os
 
 import wget
 import youtube_dl
+from aiohttp import ClientSession
 from colorama import Fore
+from config import ARQ_API_KEY
 from Python_ARQ import ARQ
 
-from config import ARQ_API_KEY
-
-arq = ARQ("https://thearq.tech", ARQ_API_KEY)
+session = ClientSession()
+arq = ARQ("https://thearq.tech", ARQ_API_KEY, session)
 
 
 async def main():
@@ -52,7 +53,8 @@ async def main():
 
                     song_index = int(
                         input(
-                            Fore.YELLOW + " \nEnter Song Number To Download It.\n\n > "
+                            Fore.YELLOW
+                            + " \nEnter Song Number To Download It.\n\n > "
                         )
                     )
                     s = song_index
@@ -64,7 +66,10 @@ async def main():
                     final_song_name = f"{song_name}.m4a"
                     os.rename(download, final_song_name)
 
-                    print(Fore.LIGHTGREEN_EX + " \n\nDownloaded In Current Directory\n")
+                    print(
+                        Fore.LIGHTGREEN_EX
+                        + " \n\nDownloaded In Current Directory\n"
+                    )
 
                 elif service == 2:
                     query = input(
@@ -87,7 +92,9 @@ async def main():
                             + " \nWhat Do You Want To Do?\n 1. Download\n 2. Listen\n\n> "
                         )
                     )
-                    yt_link = f"https://youtube.com{results[song_index].url_suffix}"
+                    yt_link = (
+                        f"https://youtube.com{results[song_index].url_suffix}"
+                    )
                     if query2 == 1:
                         ydl_opts = {
                             "format": "bestaudio/best",
@@ -131,7 +138,9 @@ async def main():
                             + " \nWhat Do You Want To Do?\n 1. Download\n 2. Stream\n\n> "
                         )
                     )
-                    yt_link = f"https://youtube.com{results[song_index].url_suffix}"
+                    yt_link = (
+                        f"https://youtube.com{results[song_index].url_suffix}"
+                    )
                     if query2 == 1:
                         ydl_opts = {}
                         with youtube_dl.YoutubeDL(ydl_opts) as ydl:

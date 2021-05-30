@@ -2,3 +2,4 @@ python-arq
 colorama
 youtube_dl
 wget
+aiohttp

@@ -9,7 +9,6 @@ __pycache__/
 *.mp4
 # C extensions
 *.so
-config.py
 # Distribution / packaging
 .Python
 build/
